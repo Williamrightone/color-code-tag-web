@@ -1,0 +1,23 @@
+.mainBody{
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  /* margin: 40px 30px 30px 30px; */
+  margin: 0 auto;
+  margin-top: 60px;
+  border-radius: 5px;
+  padding: 25px;
+  width: 350px;
+}
+
+.subBody{
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  /* margin: 40px 30px 30px 30px; */
+  margin: 0 auto;
+  margin-top: 300px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  padding: 25px;
+  width: 350px;
+}
+

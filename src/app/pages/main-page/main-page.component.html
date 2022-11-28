@@ -1,0 +1,77 @@
+<div class="mainBody">
+
+  <H1 style="text-align: center;">Color Code Tag</H1>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <img src="../../../assets/img/PIX.png" alt="" style="height: 200px;">
+  </div>
+
+  <div class="mb-3" style="text-align: center; margin-top: 15px;">
+    <label for="formFile" class="form-label">
+      Get Your Color Code Set
+      <br>
+      From Your Picture
+    </label>
+    <input class="form-control" type="file" accept="image/*" id="formFile" style="width: 180px; margin: 0 auto;"
+      (change)="onChange($event)">
+  </div>
+
+  <div style="text-align: center;">
+
+    <button class="btn btn-primary btn-sm" (click)="onUpload(five)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <b>Get Start</b>
+    </button>
+
+    <!-- <button class="btn btn-primary btn-sm" (click)="onUpload()">  <b>Get Start2</b> </button> -->
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="cleanColor()"></button>
+      </div>
+
+      <div class="modal-body" style="text-align: center ;">
+
+        <div>
+          <img [src]="temImgUrl" alt="" style="width: 100%; ">
+        </div>
+
+        <div style="display: inline-block">
+          <div *ngFor="let color of colorList" style="width: 35px; height: 35px; margin: 5px; margin-top: 10px; text-align: center; font-size: 0.5px; float:left;" [style.backgroundColor]="color">
+            <!-- <b style="color: white;">{{color}}</b> -->
+          </div>
+        </div>
+
+        <div style="margin-bottom: 20px">
+          <button class="btn btn-primary " (click)="onUpload(three)">
+            <b> 3 </b>
+          </button>
+
+          <button class="btn btn-primary" (click)="onUpload(five)" style="margin-left: 30px; margin-right: 30px;">
+            <b> 5 </b>
+          </button>
+
+          <button class="btn btn-primary " (click)="onUpload(seven)">
+            <b> 7 </b>
+          </button>
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" value={{colorString}} aria-label="" aria-describedby="button-addon2" #inputvalue>
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="copyString(inputvalue)" >Copy</button>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="cleanColor()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
